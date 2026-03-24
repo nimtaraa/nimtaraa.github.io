@@ -83,21 +83,22 @@ export default function Home() {
           <div className="space-y-10">
             {[
               {
-                title: 'Job Title',
-                company: 'Company Name',
-                date: 'Date Range',
+                title: 'Mobile App Developer',
+                company: 'Absol-x Core AI',
+                date: 'May 2025 – Present',
                 points: [
-                  'Description of responsibilities and achievements.',
-                  'Another key accomplishment or responsibility.',
+                  'Worked as part of Team AbsolX contributing to mobile and backend development.',
                 ],
               },
               {
-                title: 'Another Job Title',
-                company: 'Another Company',
-                date: 'Date Range',
+                title: 'Intern Software Engineer',
+                company: 'The Rise (Subsidiary of CodeGen)',
+                date: 'July 2024 – December 2024',
                 points: [
-                  'Description of responsibilities and achievements.',
-                  'Another key accomplishment or responsibility.',
+                  'Built Flutter-based mobile features integrated with REST APIs and backend services, improving development efficiency through reusable components and clean architecture.',
+                  'Developed backend workflows for AI-assisted services (RAG/agents) with defined request/response contracts and validation, reducing integration issues.',
+                  'Contributed to code reviews, Agile ceremonies, and testing (unit/integration), improving maintainability and reducing defects.',
+                  'Implemented Python (FastAPI) backend services for realtime processing, handling concurrent requests and improving response performance.',
                 ],
               },
             ].map((job, i) => (
@@ -143,39 +144,108 @@ export default function Home() {
           <h2 className="text-[#ccd6f6] mb-10">Things I&apos;ve Built</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[1, 2, 3, 4].map((item) => (
+            {[
+              {
+                title: 'Tripgenix — Tour Management System',
+                meta: null,
+                points: [
+                  'Built microservices-based backend using Spring Boot and SQL with a React dashboard and Flutter app.',
+                  'Implemented trip management, routing, and mapping; deployed on AWS with CI/CD.',
+                ],
+                tags: [
+                  'Spring Boot',
+                  'SQL',
+                  'React',
+                  'Flutter',
+                  'Firebase (FCM)',
+                  'Google Maps API',
+                  'AWS',
+                  'REST APIs',
+                ],
+                href: null,
+              },
+              {
+                title: 'VIP Taxi: Smart Mobility & Taxi Hailing',
+                meta: 'Group · Client collaboration — Vvecon',
+                points: [
+                  'Built key rider/driver flows and integrated REST APIs for authentication, booking, and ride lifecycle.',
+                  'Implemented realtime tracking and notifications for live trip updates.',
+                ],
+                tags: ['Flutter', 'Firebase', 'REST APIs', 'Maps', 'FCM/OneSignal', 'Stripe'],
+                href: null,
+              },
+              {
+                title: 'Official RISTCON Website',
+                meta: 'University of Ruhuna · Group',
+                points: [
+                  'Developed multi-tier conference management for multi-year research data and user registrations.',
+                  'Deployed services with Docker and Nginx for stable testing and release environments.',
+                ],
+                tags: ['React (TS)', 'Laravel', 'MySQL', 'Docker', 'Nginx'],
+                href: null,
+              },
+              {
+                title: 'SBOM Vulnerability Scanner',
+                meta: null,
+                points: [
+                  'Built async API generating CycloneDX SBOMs and CVE reports using Syft/Grype with validation and containerized execution.',
+                ],
+                tags: ['Rust', 'Axum', 'Tokio', 'Docker', 'Syft', 'Grype', 'CycloneDX'],
+                href: null,
+              },
+              {
+                title: 'PostSync: AI-Driven LinkedIn Content Automation',
+                meta: null,
+                points: [
+                  'Designed multi-agent workflow using LangGraph for content generation and scheduling.',
+                  'Implemented OAuth 2.0 and MongoDB state tracking; deployed FastAPI (Render) and React (Vercel).',
+                ],
+                tags: ['Python', 'FastAPI', 'LangGraph', 'MongoDB', 'OAuth 2.0', 'React', 'Vercel'],
+                href: null,
+              },
+            ].map((project) => (
               <article
-                key={item}
-                className="group glass-panel p-6 hover-lift cursor-pointer"
+                key={project.title}
+                className="group glass-panel p-6 hover-lift"
               >
-                <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <h3 className="text-base font-medium text-[#ccd6f6] mb-1">
-                      Project Title {item}
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="min-w-0">
+                    <h3 className="text-base font-medium text-[#ccd6f6] mb-1 leading-snug">
+                      {project.title}
                     </h3>
-                    <p className="text-xs font-mono text-[#64ffda]/40">Web App</p>
+                    {project.meta ? (
+                      <p className="text-xs font-mono text-[#64ffda]/40">{project.meta}</p>
+                    ) : null}
                   </div>
-                  <a
-                    href="#"
-                    className="text-[#ccd6f6]/20 hover:text-[#64ffda] transition-colors"
-                    aria-label="External link"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </a>
+                  {project.href ? (
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="shrink-0 text-[#ccd6f6]/20 hover:text-[#64ffda] transition-colors"
+                      aria-label="External link"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    </a>
+                  ) : null}
                 </div>
-                <p className="text-[#ccd6f6]/35 text-sm mb-5 leading-relaxed">
-                  A brief description of the project, what it does, and the technologies
-                  used to build it.
-                </p>
+                <ul className="text-[#ccd6f6]/35 text-sm mb-5 space-y-2 leading-relaxed">
+                  {project.points.map((point, j) => (
+                    <li key={j} className="flex items-start gap-2">
+                      <span className="text-[#64ffda]/40 mt-1.5 text-[10px] shrink-0">▹</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
                 <ul className="flex flex-wrap gap-2 text-[10px] font-mono">
-                  {['React', 'TypeScript', 'Next.js'].map((tech) => (
+                  {project.tags.map((tech) => (
                     <li
                       key={tech}
                       className="px-2 py-0.5 rounded bg-[#ccd6f6]/5 text-[#ccd6f6]/25"
