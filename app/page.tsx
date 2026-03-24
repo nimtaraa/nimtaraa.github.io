@@ -37,7 +37,7 @@ export default function Home() {
           <div className="space-y-8">
             <div className="space-y-5 text-[#ccd6f6]/50 text-sm md:text-base leading-relaxed">
               <p>
-                Hello! I&apos;m Thara, a software developer based in New York City who enjoys
+                Hello! I&apos;m Thara, a software developer based in Colombo who enjoys
                 building products that feel effortless and visually distinct.
               </p>
               <p>

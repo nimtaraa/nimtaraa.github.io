@@ -64,9 +64,9 @@ export default function Hero() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
           }`}
         >
-          I&apos;m a software engineer and artist based in New York City. I&apos;m fascinated
-          by large-scale, high-impact products and contributed to major feature launches
-          in industry-leading services as well as apps that have 100M+ installs.
+          3rd year Computer Science student specializing in full stack and cross platform mobile development, seeking an
+internship opportunity. Experienced in building end to end applications spanning intuitive mobile interfaces to scalable
+backend systems, with a focus on clean code, problem solving, and production ready software
         </p>
 
         {/* CTA */}
