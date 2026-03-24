@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -31,6 +31,9 @@ jobs:
         run: npm ci
 
       - name: Build site
+        env:
+          # User/org site (owner.github.io repo): no base path. Project pages: /repo-name
+          BASE_PATH: ${{ github.event.repository.name == format('{0}.github.io', github.repository_owner) ? '' : format('/{0}', github.event.repository.name) }}
         run: npm run build
 
       - name: Setup Pages
